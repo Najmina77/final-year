@@ -1,0 +1,31 @@
+.table-wrapper{
+    /* box-shadow: 0 0 1px 0 rgba(0,0,0,.25); */
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    }
+
+thead{
+    color: #337AB7;
+}
+.ticket-number{
+    border: none;
+    border-radius: 7px;
+    text-align: center;
+    color: white;
+    background: green;
+}
+
+.card{
+    border-radius: 10px;
+    height: 100px;
+}
+.values{
+    font-size: medium;
+    font-weight: bold;
+}
+
+.summary{
+    background: rgba(0, 0, 0, 0.5);
+}
+.space{
+    margin: 10px;
+}

@@ -1,0 +1,60 @@
+<body class="container">
+<section>
+    
+
+    <div class="card" style="width: 300px;">
+        <form autocomplete="off" novalidate (ngSubmit)="search(searchForm)" #searchForm='ngForm'>
+            <div fxLayout="row">
+        <input style="width: 300px ; border:1px solid green" placeholder="Search by city name" class="form-control form-control-md" type="text" id="myInput" [(ngModel)] = 'loc' #lo='ngModel' name='lo'> 
+        <button type="submit" style="border: 1px solid green; font-size: 20px; border-radius: 4px;"><i class="fa fa-search"></i></button>
+            </div>
+        </form>
+    </div>
+    <!-- <div class="card" style="width: 300px;">
+        <div class='card-body'>
+            <div class='row'>
+              <div class='col-md-12'>
+                <div class="row">
+                  <div class="col-md-6">Current weather:</div>
+                  <div class="col-md-6">sdjfbd</div>
+                </div>
+                <div class='row'>
+                  <div class='col-md-6'>Temperature:</div>
+                  <div class='col-md-6'>iorgofir</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-6'>Humidity:</div>
+                    <div class='col-md-6'>iorgofir</div>
+                  </div>
+                <div class='row'>
+                    <div class='col-md-6'>Rain:</div>
+                    <div class='col-md-6'>iorgofir</div>
+                  </div>
+                <div class='row'>
+                    <div class='col-md-6'>Outcast:</div>
+                    <div class='col-md-6'>iorgofir</div>
+                  </div>
+    </div>
+    </div>
+    </div>
+    </div> -->
+
+    <div id='container'>
+        <div *ngIf='!loc' id='search'>
+            <h4>Please enter location to find weather information.</h4>
+        </div>
+        <mat-tab-group *ngIf='loc'>
+            <mat-tab label="Current Weather">
+                <app-current-weather></app-current-weather>
+            </mat-tab>
+            <mat-tab label="Forecast">
+                <app-forecast></app-forecast>
+            </mat-tab>
+            <mat-tab label="UV Index">
+                <app-uv></app-uv>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+</section>
+</body>

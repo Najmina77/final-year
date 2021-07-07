@@ -1,0 +1,5 @@
+django-cors-headers==3.4.0
+django-mixins==0.0.10
+django-widget-tweaks==1.4.8
+djangorestframework==3.11.0
+djangorestframework-jwt==1.11.0
