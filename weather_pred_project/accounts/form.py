@@ -1,7 +1,9 @@
 from django.contrib.auth.forms import UserCreationForm
-from django.db import transaction
+from django.db import models, transaction
 from django import forms
-from .models import User, Farmer, Farmers
+from django.db.models import fields
+from django.forms.models import ModelForm
+from .models import CityWeather, User, Farmer, Farmers
 
 class FarmerSignUpForm(UserCreationForm):
     # applicant_full_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'placeholder': 'Please enter full name'}))
@@ -38,4 +40,12 @@ class FarmerSignUpForm(UserCreationForm):
         return user
 
 
+
+class CityForm(ModelForm):
+    class Meta:
+        model =  CityWeather
+        fields = '__all__'
+
+
+    
 

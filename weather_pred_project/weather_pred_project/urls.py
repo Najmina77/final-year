@@ -19,14 +19,17 @@ from django.conf.urls.static import static
 from django.conf import settings 
 from django.views.generic.base import TemplateView
 from django.conf.urls import url
-from accounts.views import register, login_request, logout_view, landing_page_view
+from accounts.views import register, login_request, logout_view, landing_page_view, get_city_weather
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-        # applicant's login page
+        # applicant's login page 
     path('login/', login_request, name='login'),
     path('logout/', logout_view, name='logout'),
+    path('get_weather', get_city_weather, name='get_weather'), 
     path('register/', register.as_view(), name='register'),
+    url(r'weather_stations', TemplateView.as_view(template_name="menubar.html"), name="weather_stations"),
+    url(r'weather_stations_2', TemplateView.as_view(template_name="menu2.html"), name="weather_stations_2"),
     url(r'st-farmer', TemplateView.as_view(template_name="home.html"), name="st-farmer"),
     url(r'ds-admin', TemplateView.as_view(template_name="home.html"), name="ds-admin"),
     url(r'^.*', landing_page_view, name="welcome"),
