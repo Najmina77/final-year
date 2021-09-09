@@ -16,16 +16,23 @@
             text-align: center;
         }
     </style>
-    <title>Login</title>
+    <title>Prediction</title>
 </head>
 
 <body>
-    <section>
+    <section >
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container" align="center">
+          <h1 class="display-4">Weather Prediction</h1>
+        <h3 class="lead">Weather insights to more farm produce</h3>
+        </div>
+        
+      </div>
         <div class="container">
             <div class="row">
               <div class="col-md-6 mx-auto">
                 <div class="card">                 
-                  <h3>Enter City Name and Date to get Weather prediction</h3>
+                 
                   <div class="card-body">
                       {% block content %}
                       <form action="{% url 'get_weather' %}" method="POST" novalidate>
@@ -40,19 +47,30 @@
                           {% endfor %}
                           {% endif %}
                         </div><br>
-                        {% endfor %}                       
-                        <button type="submit">Check  Weather</button>
-                      </form>                     
+
+                        {% endfor %}  
+
+                        <button class="btn btn-block btn-secondary" type="submit">Predict</button>
+                      </form>    
+
                       {% endblock %}
                   </div>                  
                   </div>
 
-                  <div>
-                    <br>
-                    <h5> {{ message }} </h5> <br>   
-                  </div> 
+                  
 
-                </div>                
+                </div> 
+                <div class="col-4 card">
+                  <br>
+                  <h1>Temperature</h1>
+                  <h5 > {{ temp }} </h5> 
+                  <hr> 
+                 
+                  <h1>Precipitation</h1>
+                  <h5 > {{ precip }} </h5>
+                  <hr>              
+
+                </div >                  
                 </div>                                     
                 </div>                  
     </section>

@@ -26,7 +26,9 @@ urlpatterns = [
         # applicant's login page 
     path('login/', login_request, name='login'),
     path('logout/', logout_view, name='logout'),
-    path('get_weather', get_city_weather, name='get_weather'), 
+    # endpoint to post prediction form data
+    path('get_weather/', get_city_weather, name='get_weather'), 
+    
     path('register/', register.as_view(), name='register'),
     url(r'weather_stations', TemplateView.as_view(template_name="menubar.html"), name="weather_stations"),
     url(r'weather_stations_2', TemplateView.as_view(template_name="menu2.html"), name="weather_stations_2"),

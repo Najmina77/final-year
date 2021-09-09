@@ -1,4 +1,4 @@
-import requests
+ import requests
 import pandas as pd
 import numpy as np
 import json
@@ -17,7 +17,7 @@ warnings.filterwarnings("ignore") # specify to ignore warning messages
 now_date = datetime.datetime.now()
 now_date_str = str(now_date)
 now_date_split = now_date_str.split('-')
-now_day = now_date_split[2].split(' ')[0]
+now_day = now_date_split[2].split(' ')[0] 
 now_date_only = '{}{}{}'.format(now_date_split[0], now_date_split[1], now_day)
 now_date_only
 
@@ -134,7 +134,7 @@ embu_df['datetime'] = embu_dates
 embu_df['precipitation'] = embu_precipitation_values
 embu_df['temp'] = embu_temp_values
 embu_df['wind'] = embu_wind_values
-
+  
 nyeri_df = pd.DataFrame()
 nyeri_df['datetime'] = nyeri_dates
 nyeri_df['precipitation'] = nyeri_precipitation_values
@@ -150,7 +150,7 @@ nanyuki_df['wind'] = nanyuki_wind_values
 
 #reset indexes to datetime
 embu_df.set_index('datetime', inplace=True)
-nyeri_df.set_index('datetime', inplace=True)
+nyeri_df.set_index('datetime', inplace=True) 
 nanyuki_df.set_index('datetime', inplace=True)
 
 
@@ -248,4 +248,4 @@ pickle.dump(embu_results, open(embu_model_name, 'wb'))
 pickle.dump(nanyuki_results, open(nanyuki_model_name, 'wb'))
 pickle.dump(nyeri_results, open(nyeri_model_name, 'wb'))
 
-print('You just  saved the models and reached the end of the training, its time to do other things!')
+print('Done saving the models')
